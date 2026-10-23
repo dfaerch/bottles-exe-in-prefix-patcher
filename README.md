@@ -10,12 +10,14 @@ I can't say for sure if disabling it causes problems. I suspect the restriction 
 
 - This is for the Bottles **Flatpak** version only.
 - The patch is applied only at runtime, without patching files on disk. It remains installed across Bottles updates, but compatibility with future versions isn't guaranteed.
-- A small Python file gets copied into the Flatpak container and is loaded at Bottles start-up.
+- A small Python file is installed in Bottles' application data directory and loaded at startup.
 - No files from the original installation, installed games or data (e.g. saves) are modified.
 
 ## Installation
 
 Requires Bottles installed through Flatpak.
+
+### Dir permissions
 
 You must give the Bottles Flatpak access to your games directory. If you use, e.g., `~/Games/mygames`, you can add read-only access to that dir like so:
 
@@ -25,12 +27,16 @@ flatpak override --user --filesystem="$HOME/Games/mygames:ro" com.usebottles.bot
 
 If you also need write access, remove `:ro` from the end of the path in the command.
 
-Then install the runtime patcher.
+If you want a GUI for changing this permission instead, Flatseal is nice and simple.
+
+### Installing patcher
 
 
 ```bash
 ./install.sh
 ```
+
+Restart Bottles to activate the patch.
 
 ## Uninstallation
 
