@@ -47,7 +47,7 @@ Restart Bottles to activate the patch.
 ## Notes
 
 
-The patch currently expects five checks that restrict executables to the prefix. If Bottles changes its implementation, the patch will fail rather than silently applying to an unexpected number of checks.
+The patch currently expects exactly five checks that restrict executables to the prefix. If Bottles changes its implementation, the patch will fail rather than silently applying to an unexpected number of checks.
 
 This is an unofficial patch and is not affiliated with the Bottles project.
 
